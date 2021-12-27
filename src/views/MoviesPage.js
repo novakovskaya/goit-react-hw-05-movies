@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import styles from "./styles/Page.module.css";
 import { fetchSearchMovies } from "../services/movies";
 import SearchForm from "../components/SearchForm";
+import imgNotFound from "../images/notfound-movies.jpeg";
 
 const MoviesPage = () => {
   const { url } = useRouteMatch();
@@ -43,11 +44,15 @@ const MoviesPage = () => {
         {movies.map(({ id, poster_path, title }) => (
           <li key={id} className={styles.item}>
             <Link to={`${url}/${id}`} className={styles.link}>
-              <img
-                src={`https://themoviedb.org/t/p/w500${poster_path}`}
-                alt={title}
-                width={240}
-              />
+              {poster_path ? (
+                <img
+                  src={`https://themoviedb.org/t/p/w500${poster_path}`}
+                  alt={title}
+                  width={240}
+                />
+              ) : (
+                <img src={imgNotFound} alt="not found" width={240} />
+              )}
               <h2 className={styles.titlePoster}>{title}</h2>
             </Link>
           </li>
