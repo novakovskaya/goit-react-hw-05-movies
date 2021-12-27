@@ -40,10 +40,15 @@ const MoviesPage = () => {
       <SearchForm onSubmit={handleFormSubmit} />
 
       <ul className={styles.list}>
-        {movies.map((movie) => (
-          <li key={movie.id} className={styles.item}>
-            <Link to={`${url}/${movie.id}`} className={styles.link}>
-              {movie.title}
+        {movies.map(({ id, poster_path, title }) => (
+          <li key={id} className={styles.item}>
+            <Link to={`${url}/${id}`} className={styles.link}>
+              <img
+                src={`https://themoviedb.org/t/p/w500${poster_path}`}
+                alt={title}
+                width={240}
+              />
+              <h2 className={styles.titlePoster}>{title}</h2>
             </Link>
           </li>
         ))}
