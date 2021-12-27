@@ -1,0 +1,42 @@
+.container {
+  margin-left: 40px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 1.17;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex-basis: calc((100% - 30px) / 5);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.link {
+  display: inline-block;
+  color: #2a363b;
+  text-decoration: none;
+  transition: transform 250ms linear;
+}
+
+.link:hover {
+  color: #5f9ea0;
+  transform: scale(1.1);
+}
+
+.titlePoster {
+  font-size: 18px;
+  margin-top: 10px;
+  width: 240px;
+}
