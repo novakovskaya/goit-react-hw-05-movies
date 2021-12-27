@@ -1,0 +1,18 @@
+.list {
+  margin-top: 10px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.author {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-decoration: underline;
+}
+
+.content {
+  font-size: 16px;
+}
