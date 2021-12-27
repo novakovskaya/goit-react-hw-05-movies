@@ -21,7 +21,7 @@ const MoviesPage = () => {
     }
 
     fetchSearchMovies(searchQuery).then((movie) => {
-      if (movie.length === 0) {
+      if (movie.results.length === 0) {
         toast.error("Nothing not found!");
       }
 
