@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 4px 2px -2px rgb(0 0 0 / 14%);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 30px;
+  padding-top: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.score {
+  font-size: 16px;
+  line-height: 1.25;
+
+  margin-bottom: 20px;
+}
+
+.titleDesc {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.25;
+
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+}
+
+.item {
+  font-size: 16px;
+}
+
+.item:not(:last-child) {
+  margin-right: 5px;
+}
