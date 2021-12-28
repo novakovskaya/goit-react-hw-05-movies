@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import styles from "./styles/Cast.module.css";
 import { fetchInfoAboutCast } from "../services/movies";
-import imgNotFound from "../images/notfound.png";
+import imgNotFound from "../images/notfound.jpeg";
 
 const MoviesCast = () => {
   const { movieId } = useParams();
@@ -24,14 +24,14 @@ const MoviesCast = () => {
                 <img
                   src={`https://themoviedb.org/t/p/w500${profile_path}`}
                   alt={name}
-                  width={150}
+                  width={180}
                 />
               ) : (
                 <img
                   className={styles.images}
                   src={imgNotFound}
                   alt="not found"
-                  width={150}
+                  width={180}
                 />
               )}
               <p className={styles.name}>{name}</p>

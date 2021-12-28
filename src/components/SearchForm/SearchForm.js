@@ -37,7 +37,7 @@ const SearchForm = ({ onSubmit }) => {
 
         <button type="submit" className={styles.button}>
           <BsSearch style={{ width: 20, height: 20 }} />
-          Search
+          <span className={styles.btnText}>Search</span>
         </button>
       </form>
     </div>

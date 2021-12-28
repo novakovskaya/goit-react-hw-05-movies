@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./MovieCard.module.css";
+import imgNotFound from "../../images/notfound.jpeg";
 
 const MovieCard = ({ movie }) => {
   const { poster_path, title, vote_average, overview, genres, release_date } =
@@ -8,11 +9,15 @@ const MovieCard = ({ movie }) => {
 
   return (
     <div className={styles.container}>
-      <img
-        src={`https://themoviedb.org/t/p/w500${poster_path}`}
-        alt={title}
-        width={360}
-      />
+      {poster_path ? (
+        <img
+          src={`https://themoviedb.org/t/p/w500${poster_path}`}
+          alt={title}
+          width={360}
+        />
+      ) : (
+        <img src={imgNotFound} alt="not found" width={360} />
+      )}
       <div className={styles.wrapper}>
         <h2 className={styles.title}>
           {title} {date}

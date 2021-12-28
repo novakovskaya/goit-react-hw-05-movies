@@ -5,6 +5,8 @@ import {
   Route,
   Switch,
   useRouteMatch,
+  useHistory,
+  useLocation,
 } from "react-router-dom";
 import { BsChevronDoubleLeft } from "react-icons/bs";
 
@@ -18,6 +20,9 @@ const Reviews = lazy(() => import("./Reviews"));
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const { url, path } = useRouteMatch();
+  const history = useHistory();
+  const location = useLocation();
+
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -25,7 +30,7 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   const onClickGoBack = () => {
-    window.history.back();
+    history.push(location?.state?.from?.location || "/");
   };
 
   return (
@@ -41,7 +46,7 @@ const MovieDetailsPage = () => {
         <ul className={styles.list}>
           <li className={styles.item}>
             <NavLink
-              to={`${url}/cast`}
+              to={{ pathname: `${url}/cast`, state: { ...location.state } }}
               className={styles.link}
               activeClassName={styles.activeLink}
             >
@@ -51,7 +56,7 @@ const MovieDetailsPage = () => {
 
           <li className={styles.item}>
             <NavLink
-              to={`${url}/reviews`}
+              to={{ pathname: `${url}/reviews`, state: { ...location.state } }}
               className={styles.link}
               activeClassName={styles.activeLink}
             >

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useRouteMatch, useHistory, useLocation } from "react-router-dom";
+import queryString from "query-string";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,10 +11,11 @@ import imgNotFound from "../images/notfound-movies.jpeg";
 
 const MoviesPage = () => {
   const { url } = useRouteMatch();
-  const location = useLocation();
   const history = useHistory();
+  const location = useLocation();
+  const { query } = queryString.parse(location.search);
   const [movies, setMovies] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(query || "");
 
   useEffect(() => {
     if (searchQuery === "") {
@@ -23,6 +25,7 @@ const MoviesPage = () => {
     fetchSearchMovies(searchQuery).then((movie) => {
       if (movie.results.length === 0) {
         toast.error("Nothing not found!");
+        setMovies([]);
       }
 
       setMovies(movie.results);
@@ -43,7 +46,18 @@ const MoviesPage = () => {
       <ul className={styles.list}>
         {movies.map(({ id, poster_path, title }) => (
           <li key={id} className={styles.item}>
-            <Link to={`${url}/${id}`} className={styles.link}>
+            <Link
+              to={{
+                pathname: `${url}/${id}`,
+                state: {
+                  from: {
+                    location,
+                    label: "Go back",
+                  },
+                },
+              }}
+              className={styles.link}
+            >
               {poster_path ? (
                 <img
                   src={`https://themoviedb.org/t/p/w500${poster_path}`}

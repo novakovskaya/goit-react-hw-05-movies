@@ -1,7 +1,9 @@
 .form {
   display: flex;
   align-items: center;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
   max-width: 600px;
   margin-bottom: 20px;
 
@@ -10,12 +12,25 @@
   overflow: hidden;
 }
 
+.input {
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  border: 1px solid #efefef;
+  outline: none;
+  padding: 5px 10px;
+}
+
+.input::placeholder {
+  font-size: 18px;
+}
+
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 5px;
-  width: 100px;
+  width: 150px;
   height: 35px;
 
   background-color: #5f9ea0;
@@ -33,15 +48,7 @@
   box-shadow: 0 1px 1px rgb(0 0 0 / 20%);
 }
 
-.input {
-  display: inline-block;
-  width: 100%;
-  font-size: 20px;
-  border: 1px solid #efefef;
-  outline: none;
-  padding: 5px 10px;
-}
-
-.input::placeholder {
-  font-size: 18px;
+.btnText {
+  margin-left: 5px;
+  font-size: 16px;
 }
