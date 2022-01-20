@@ -20,8 +20,8 @@
 }
 
 .images {
-  width: 180px;
-  height: 270px;
+  width: 140px;
+  height: 210px;
 }
 
 .name {
@@ -37,11 +37,22 @@
 
 @media screen and (min-width: 768px) {
   .item {
-    flex-basis: calc((100% - 60px) / 6);
+    flex-basis: calc((100% - 40px) / 4);
   }
 
   .name,
   .text {
     font-size: 16px;
+  }
+
+  .images {
+    width: 180px;
+    height: 270px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .item {
+    flex-basis: calc((100% - 60px) / 6);
   }
 }

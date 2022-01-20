@@ -22,6 +22,7 @@ const MoviesCast = () => {
             <li key={id} className={styles.item}>
               {profile_path ? (
                 <img
+                  className={styles.images}
                   src={`https://themoviedb.org/t/p/w500${profile_path}`}
                   alt={name}
                   width={180}
