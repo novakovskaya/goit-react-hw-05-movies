@@ -1,7 +1,6 @@
 .container {
-  display: flex;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   box-shadow: 0 4px 2px -2px rgb(0 0 0 / 14%);
 }
 
@@ -9,43 +8,79 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-left: 30px;
   padding-top: 20px;
 }
 
 .title {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .score {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.25;
 
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .titleDesc {
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .text {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.25;
 
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .list {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
 }
 
 .item {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .item:not(:last-child) {
   margin-right: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .wrapper {
+    margin-left: 30px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .titleDesc {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .score,
+  .text {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .text {
+    max-width: 900px;
+  }
+
+  .item {
+    font-size: 16px;
+  }
 }

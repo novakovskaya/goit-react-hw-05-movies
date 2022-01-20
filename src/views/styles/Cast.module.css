@@ -1,6 +1,7 @@
 .list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-left: -10px;
   margin-top: -10px;
   padding-top: 30px;
@@ -9,7 +10,7 @@
 .item {
   display: flex;
   flex-direction: column;
-  flex-basis: calc((100% - 60px) / 6);
+  flex-basis: calc((100% - 30px) / 3);
   align-items: center;
   margin-left: 10px;
   margin-top: 10px;
@@ -30,6 +31,17 @@
 
 .name,
 .text {
-  font-size: 16px;
+  font-size: 12px;
   max-width: 180px;
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    flex-basis: calc((100% - 60px) / 6);
+  }
+
+  .name,
+  .text {
+    font-size: 16px;
+  }
 }

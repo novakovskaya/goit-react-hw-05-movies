@@ -1,5 +1,4 @@
 .container {
-  margin-left: 40px;
   padding: 20px;
 }
 
@@ -45,7 +44,7 @@
 }
 
 .item {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   list-style: none;
 }
@@ -62,4 +61,14 @@
 
 .activeLink {
   color: #5f9ea0;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-left: 40px;
+  }
+
+  .item {
+    font-size: 22px;
+  }
 }
